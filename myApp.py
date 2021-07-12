@@ -71,8 +71,8 @@ else:
     st.subheader('Dashboard')
     def user_input_features():
         
-        salaire = st.sidebar.slider('Salaire', train["AMT_INCOME_TOTAL"].describe()['min'],train["AMT_INCOME_TOTAL"].describe()['75%'],train["AMT_INCOME_TOTAL"].mean())
-        ancienete = st.sidebar.slider('Ancienneté', train["DAYS_EMPLOYED"].describe()['min'],train["DAYS_EMPLOYED"].describe()['max'],train["DAYS_EMPLOYED"].astype('float64').mean())
+        salaire = st.sidebar.slider('Salaire', train["AMT_INCOME_TOTAL"].describe()['min'],train["AMT_INCOME_TOTAL"].describe()['75%'],float(train["AMT_INCOME_TOTAL"].astype('float64').mean()))
+        ancienete = st.sidebar.slider('Ancienneté', train["DAYS_EMPLOYED"].describe()['min'],train["DAYS_EMPLOYED"].describe()['max'],float(train["DAYS_EMPLOYED"].astype('float64').mean()))
        
         data = {'DAYS_EMPLOYED': ancienete,
                 'AMT_INCOME_TOTAL': salaire}
